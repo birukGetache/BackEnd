@@ -17,9 +17,9 @@ const JWT_SECRET = process.env.JWT_SECRET;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-
+const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/HULUGENERAL';
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/HULUGENERAL', {
+mongoose.connect(dbUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
