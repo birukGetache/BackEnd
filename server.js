@@ -11,13 +11,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const Blog = require('./model/Blog');
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/HULUGENERAL';
+const dbUri = process.env.MONGODB_URI;
 // Connect to MongoDB
 mongoose.connect(dbUri, {
   useNewUrlParser: true,
